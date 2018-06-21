@@ -1,0 +1,28 @@
+{
+  "private": true,
+  "name": "lvvtr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lerna":"lerna bootstrap",
+    "lerna-clean":"lerna clean"
+  },
+  "workspaces": [
+    "packages/hosts/*","packages/libs/**","packages/apps/**"
+	],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lusess123/lvvtr.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lusess123/lvvtr/issues"
+  },
+  "homepage": "https://github.com/lusess123/lvvtr#readme",
+  "devDependencies": {
+    "lerna": "^2.11.0"
+  }
+}
