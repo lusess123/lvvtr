@@ -1,0 +1,1 @@
+require("@lvvtr/app-sdk/sdkapp");

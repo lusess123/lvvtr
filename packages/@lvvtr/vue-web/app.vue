@@ -1,6 +1,6 @@
 <template>
     <div id="main" class="app-main">
-        <h1>主页面</h1>
+        <h1>开始页面</h1>
         <router-view></router-view>
     </div>
 </template>

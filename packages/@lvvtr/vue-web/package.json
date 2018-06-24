@@ -1,0 +1,18 @@
+{
+  "name": "@lvvtr/vue-web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "lib1": "*"
+  },
+  "dependencies": {
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
+  }
+}

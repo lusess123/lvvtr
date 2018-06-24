@@ -1,0 +1,31 @@
+
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "allowJs": true,
+    "target": "es2015",
+    "module": "esnext",
+    "strict": false,
+    "jsx": "react",
+    "moduleResolution": "node",
+    "noImplicitAny":false,
+    "allowSyntheticDefaultImports": true,
+    "emitDecoratorMetadata":true ,
+     // 启用 vuex-class 需要开启此选项
+     "strictFunctionTypes": false,
+    "lib": [ "es6", "dom" ],
+    "declaration": false,
+    "sourceMap": true,
+    "baseUrl": "./src/framework/",
+    "types": [
+      "node",
+    ],
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    }
+  }
+}
+
+
