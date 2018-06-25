@@ -91,7 +91,7 @@ export class CentrolApp extends BaseApp {
                     title:"管控日志"
                 },
                 {
-                    path:"/policaman",
+                    path:"/policeman",
                     component:policeman,
                     title:"警察"
                 },
@@ -161,11 +161,11 @@ const _menus : IMenu[] = [
                 text: "组织机构"
             }, {
                 icon: "",
-                name: "/policemen",
+                name: "/policeman",
                 text: "警员列表"
             }, {
                 icon: "",
-                name: "/web/warplist/apigrouplist",
+                name: "/apigrouplist",
                 text: "服务"
             }
 

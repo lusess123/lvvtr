@@ -22,6 +22,9 @@ module.exports = {
         config.plugins.push(_def);
 
     },
+    baseUrl: process.env.NODE_ENV === 'production'
+    ? '/control/'
+    : '/',
     css: {
         extract: true
     },

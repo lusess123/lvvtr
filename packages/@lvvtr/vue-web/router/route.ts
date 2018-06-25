@@ -29,7 +29,7 @@ export const MainRoutes = {
 
   path : '/',
   name : 'root',
-  redirect : '/web/allapppage',
+  redirect : '/devlist',
   component : Main,
   children : [
 
