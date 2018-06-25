@@ -10,5 +10,11 @@
   "license": "ISC",
   "devDependencies": {
     "lib1": "*"
+  },
+  "dependencies": {
+    "react":"*",
+    "react-dom":"*",
+    "@types/react":"*",
+     "@types/react-dom":"*"
   }
 }
