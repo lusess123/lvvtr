@@ -1,5 +1,5 @@
 <template>
-    <input  v-model="value" size="small" :placeholder="'请输入'+ColumnConfig.DisplayName"  />
+    <Input  v-model="value" size="small" :placeholder="'请输入'+ColumnConfig.DisplayName"  />
 </template>
 
 <script lang="ts">

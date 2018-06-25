@@ -42,22 +42,29 @@
                 <Menu mode="horizontal" theme="primary" active-name="1">
                   
                     <div class="layout-nav">
-                        <Submenu  style=”{zIndex:99999}“ transfer :name="app.Name"  :key="app.Name" v-for="(app) in getApps()">
-                           <template slot="title">
-                             <i :class="'fa  fa-' + app.Icon"> {{app.Title}}</i>
-                            </template>
-                            <MenuGroup  transfer title="使用">
-                <MenuItem name="3-1">新增和启动</MenuItem>
-                <MenuItem name="3-2">活跃分析</MenuItem>
-                <MenuItem name="3-3">时段分析</MenuItem>
-            </MenuGroup>
-            <MenuGroup title="留存">
-                <MenuItem name="3-4">用户留存</MenuItem>
-                <MenuItem name="3-5">流失用户</MenuItem>
-            </MenuGroup>
-                        </Submenu>
+                        
+                         <Dropdown transfer class="ivu-menu-submenu" :key="app.Name" v-for="(app) in getApps()">
+        <span href="javascript:void(0)">
+            <i :class="'fa  fa-' + app.Icon"> {{app.Title}}</i>
+        </span>
+        <DropdownMenu slot="list" transfer :style="{maxheight:'300rem'}">
+           <temple :key="menu.name" v-for="menu in app.getMenus()">
+              <DropdownItem  :disabled="menu.children && menu.children.length > 0">
+                   <i :class="'fa  fa-' + menu.icon"> {{menu.text}}</i>
+             </DropdownItem>
+             <DropdownItem  v-if="menu.children && menu.children.length > 0">
+                   <a :href="'#'+menu.name">  <i :class="'fa  fa-' + menu.icon"> {{menu.text}}</i></a>
+             </DropdownItem>
+              <DropdownItem v-if="menu.children && menu.children.length > 0" :key="page.name" v-for="page in menu.children">
+                   <a :href="'#'+page.name"> <i :class="'fa  fa-' + page.icon"> {{page.text}}</i></a>
+             </DropdownItem>
+            </temple>
+           
+        </DropdownMenu>
+    </Dropdown>
                     </div>
                 </Menu>
+               
             </Header>
             <Content :style="{margin: '88px 20px 0', background: '#fff', minHeight: '500px'}">
                 <router-view></router-view>
@@ -74,6 +81,7 @@ export default {
     getApps() {
       const _res = getapps();
       console.log(_res);
+     // _res[0].getMenus()[0].
       return _res;
     }
   }
