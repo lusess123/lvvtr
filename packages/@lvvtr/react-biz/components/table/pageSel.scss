@@ -1,0 +1,15 @@
+.contentWrap {
+    display: inline-block;
+    .leftSpan {
+        margin-right: 10px;
+    }
+    .selectWrap {
+        display: inline-block;
+        border-radius: 3px;
+    }
+    :global(.so-select-selection) {
+        border-radius: 3px;
+    }
+}
+
+

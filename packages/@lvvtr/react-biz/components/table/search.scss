@@ -1,0 +1,15 @@
+.contentWrap {
+    display: inline-block;
+    .leftSpan {
+        margin-right: 12px;
+    }
+    input {
+        width: 160px;
+        border-radius: 3px;
+        height: 28px;
+        border: 1px solid #E1E1E1;
+        background: url(./img/search.png) no-repeat 7px 7px;
+        background-size: 12px 12px;
+        padding: 0 7px;
+    }
+}

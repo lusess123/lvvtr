@@ -1,0 +1,36 @@
+.contentWrap {
+    width: 10px;
+    height: 15px;
+    position: relative;
+    cursor: pointer;
+    .up {
+        display: inline-block;
+        width: 10px;
+        height: 6px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-image: url(./img/triangle.png);
+        background-size: 100% 100%;
+        
+    }
+    .upSel {
+        background-image: url(./img/triangleBlack.png);
+        background-size: 100% 100%;
+    }
+    .down {
+        display: inline-block;
+        width: 10px;
+        height: 6px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-image: url(./img/triangle.png);
+        background-size: 100% 100%;
+        transform: rotate(180deg);
+    }
+    .downSel {
+        background-image: url(./img/triangleBlack.png);
+        background-size: 100% 100%;
+    }
+}
