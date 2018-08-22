@@ -1,0 +1,389 @@
+:global {
+  .sophon-workflow-editor {
+    -ms-user-select: none;
+    user-select: none;
+    * {
+      box-sizing: content-box;
+    }
+    
+    flex-grow: 1;
+    display: flex;
+    cursor: move;
+    overflow: hidden;
+
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+
+    background: #F5F5F5;
+    background-image: linear-gradient(#DEE0E4 1px, transparent 0), linear-gradient(90deg, #DEE0E4 1px, transparent 0), linear-gradient(rgba(222, 224, 228, 0.6) 1px, transparent 0), linear-gradient(90deg, rgba(222, 224, 228, 0.6) 1px, transparent 0);
+    background-size: 75px 75px, 75px 75px, 15px 15px, 15px 15px;
+
+    .sophon-workflow-editor-emptytip {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      transform: translateY(-50%);
+      color: #666666;
+      text-align: center;
+      i {
+        display: block;
+        font-size: 70px;
+      }
+    }
+
+    .point {
+      fill: rgba(white, 0.5);
+      &.selected {
+        fill: rgb(0, 192, 255);
+      }
+    }
+
+    .selector {
+      position: absolute;
+      border: 1px solid rgba(245, 104, 4, 1);
+      background: rgba(237, 212, 185, 0.3);
+    }
+
+    svg {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      transform-origin: 0 0;
+      overflow: visible;
+
+      #markerArrow {
+        path {
+          fill: #666;
+          stroke: none;
+        }
+      }
+
+      path {
+        fill: none;
+        stroke: #666;
+        pointer-events: all;
+        &.selected {
+          stroke: rgb(0, 192, 255) !important;
+          stroke-dasharray: 10, 2;
+          animation: dashForward 1s linear infinite;
+          &.back {
+            animation: dashBack 1s linear infinite;
+          }
+        }
+      }
+    }
+
+    .node-view {
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      position: absolute;
+      pointer-events: none;
+      transform-origin: 0 0;
+    }
+
+    .node {
+      position: absolute;
+      -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Chrome/Safari/Opera */
+      user-select: none;
+      cursor: move;
+      pointer-events: all;
+      border: 2px solid transparent;
+      border-radius: 6px;
+      padding: 2px;
+
+      &.selected {
+        border-color: #838383;
+      }
+
+      &.joinable {
+        border-style: dashed;
+        border-color: #838383;
+      }
+    }
+
+    .port {
+      font-family: iconfont;
+      position: relative;
+      width: 10px;
+      height: 10px;
+      border: 2px solid #F5F5F5;
+      border-radius: 100%;
+      background: #4B4E50;
+      &:after {
+        content: " ";
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        width: 20px;
+        height: 20px;
+        background-color: transparent;
+      }
+
+      &.joinable {
+        background: #4A90E2;
+      }
+    }
+
+    .link-label {
+      pointer-events: none;
+      > div {
+        background: rgba(70, 70, 70, 0.8);
+        border: 1px solid #333;
+        border-radius: 4px;
+        color: #fff;
+        display: inline-block;
+        font-size: smaller;
+        padding: 5px;
+        position: absolute;
+      }
+    }
+
+    .basic-node {
+      position: relative;
+      background-color: rgb(30, 30, 30);
+      color: #333333;
+      overflow: visible;
+      font-size: 11px;
+      width: 60px;
+      height: 60px;
+      border-radius: 4px;
+      box-shadow: 2px 2px 6px rgba(black, 0.2);
+      cursor: pointer;
+
+      .status {
+          position: absolute;
+          font-size: 12px;
+          top: -22px;
+          width: 60px;
+          text-align: center;
+
+          .icon_shut-down {
+              font-size: 24px;
+              color: #d4493b;
+              position: relative;
+              top: -6px;
+          }
+
+          .icon_single-box-2 {
+              font-size: 28px;
+              color: #69b96d;
+              position: relative;
+              top: -8px;
+          }
+
+          .running {
+              display: inline-block;
+              width: 17px;
+              height: 17px;
+              // background:url("../../static/loading2@2x.png");
+              background-size: 17px 17px;
+              animation: rotate 1s infinite linear;
+          }
+      }
+
+      .icon {
+        font-family: swfont;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        line-height: 60px;
+        text-align: center;
+        font-size: 22px;
+        color: #fff;
+      }
+
+      .text {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        > div {
+          max-width: 220px;
+          white-space: nowrap;
+          text-align: center;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        .name {
+          font-size: 14px;
+          margin-top: 8px;
+        }
+      }
+
+      .ports {
+        .in, .out {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%) translateX(-100%);
+          > div:not(:first-child) {
+            margin-top: 5px;
+          }
+        }
+        .in {
+          margin-left: 7px;
+        }
+        .out {
+          left: 100%;
+          margin-left: 7px;
+        }
+        .in-port, .out-port {
+          display: flex;
+          margin-top: 1px;
+          > * {
+            align-self: center;
+          }
+          .name {
+            padding: 0 5px;
+          }
+        }
+        .out-port {
+          justify-content: flex-end;
+          .name {
+            justify-content: flex-end;
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
+  @keyframes :global(rotate) {
+    from { transform:rotate(0deg) }
+    to { transform:rotate(360deg) }
+  }
+
+  @keyframes:global(dashBack) {
+    from {
+      stroke-dashoffset: 0;
+    }
+    to {
+      stroke-dashoffset: 24;
+    }
+  }
+
+  @keyframes:global(dashForward) {
+    from {
+      stroke-dashoffset: 24;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+}
+
+
+/**
+ * theme-black
+ */
+:global(.theme-black) {
+    :global {
+      .sophon-workflow-editor {
+        background: #000;
+        background-image: linear-gradient(#222 1px, transparent 0), linear-gradient(90deg, #222 1px, transparent 0), linear-gradient(rgba(222, 224, 228, 0.1) 1px, transparent 0), linear-gradient(90deg, rgba(222, 224, 228, 0.1) 1px, transparent 0);
+        background-size: 75px 75px, 75px 75px, 15px 15px, 15px 15px;
+
+        .sophon-workflow-editor-emptytip {
+          color: #999;
+        }
+
+        .point {
+          fill: rgba(white, 0.5);
+          &.selected {
+            fill: rgb(0, 192, 255);
+          }
+        }
+
+        .selector {
+          border: 1px solid rgba(245, 104, 4, 1);
+          background: rgba(237, 212, 185, 0.3);
+        }
+
+        svg {
+
+          #markerArrow {
+            path {
+              fill: #aaa;
+              stroke: none;
+            }
+          }
+
+          path {
+            stroke: #aaa;
+            &.selected {
+              stroke: rgb(0, 192, 255) !important;
+              stroke-dasharray: 10, 2;
+              animation: dashForward 1s linear infinite;
+              &.back {
+                animation: dashBack 1s linear infinite;
+              }
+            }
+          }
+        }
+
+        .node {
+          .selected {
+            border-color: #838383;
+          }
+
+          &.joinable {
+            border-color: #838383;
+          }
+        }
+
+        .port {
+          border: 2px solid #000;
+          background: #ddd;
+
+          &.joinable {
+            background: #4A90E2;
+          }
+        }
+
+        .link-label {
+          > div {
+            background: rgba(70, 70, 70, 0.8);
+            border: 1px solid #333;
+            color: #fff;
+          }
+        }
+
+        .basic-node {
+          background-color: rgb(30, 30, 30);
+          color: #333333;
+          box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.3);
+
+          .icon {
+            color: #fff;
+          }
+
+          .text {
+            color: #999;
+          }
+
+        }
+      }
+
+      @keyframes:global(dashBack) {
+        from {
+          stroke-dashoffset: 0;
+        }
+        to {
+          stroke-dashoffset: 24;
+        }
+      }
+
+      @keyframes:global(dashForward) {
+        from {
+          stroke-dashoffset: 24;
+        }
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+    }
+}

@@ -51,7 +51,7 @@
             <i :class="'fa  fa-' + app.Icon"> {{app.Title}}</i>
         </span>
         <DropdownMenu slot="list" transfer :style="{maxHeight:'300rem'}">
-           <temple :key="menu.name" v-for="menu in app.getMenus()">
+           <div :key="menu.name" v-for="menu in app.getMenus()">
                <DropdownItem  :disabled="menu.children && menu.children.length > 0"  v-if="menu.children && menu.children.length > 0">
                    <i :class="'fa  fa-' + menu.icon"> {{menu.text}}</i>
              </DropdownItem>
@@ -62,7 +62,7 @@
               <DropdownItem v-if="menu.children && menu.children.length > 0" :key="page.name" v-for="page in menu.children">
                    <a :href="'#'+page.name"> <i :class="'fa  fa-' + page.icon"> {{page.text}}</i></a>
              </DropdownItem>
-            </temple>
+            </div>
            
         </DropdownMenu>
     </Dropdown>

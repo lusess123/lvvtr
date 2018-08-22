@@ -1,13 +1,13 @@
 
-import {BaseApp} from "@lvvtr/sys/web/baseapp";
-import {IMenu} from "@lvvtr/sys/web/imenu";
+import {BaseApp} from "../sys/web/baseapp";
+import {IMenu} from "../sys/web/imenu";
 
 import iView from 'iview';
 import Vue from 'vue';
 import 'iview/dist/styles/iview.css';
 Vue.use(iView);
 
-import * as ioc from "@lvvtr/sys/ioc"
+import * as ioc from "../sys/ioc"
 
 import policy from './view/devpolicy.vue'
 import apppolicy from './view/apppolicy.vue'
@@ -27,6 +27,11 @@ import "font-awesome/less/font-awesome.less";
 import policeman  from "./view/list/policeman.vue"
 import org  from "./view/list/org.vue"
 import main from "./view/main.vue"
+import floweditor from './view/floweditor.vue'
+import flowdetail from './view/flowdetail.vue'
+import flowredux from './view/flowredux.vue'
+
+
 @ioc.PlugIn({RegName: "CentrolApp", BaseType: "IApp", Doc: "集中管控"})
 export class CentrolApp extends BaseApp {
     protected MenuList = _menus;
@@ -99,6 +104,21 @@ export class CentrolApp extends BaseApp {
                     path:"/org",
                     component:org,
                     title:"组织机构"
+                },
+                {
+                    path:"/floweditor",
+                    component:floweditor,
+                    title:"流程设计器"
+                },
+                {
+                    path:"/flowedetail",
+                    component:flowdetail,
+                    title:"流程设计器"
+                },
+                {
+                    path:"/floweredux",
+                    component: flowredux,
+                    title:"流程设计器"
                 }
         
             ]
@@ -167,6 +187,21 @@ const _menus : IMenu[] = [
                 icon: "",
                 name: "/apigrouplist",
                 text: "服务"
+            },
+            {
+                icon: "",
+                name: "/floweditor",
+                text: "流程设计器"
+            },
+            {
+                icon: "",
+                name: "/flowedetail",
+                text: "流程设计预览"
+            },
+            {
+                icon: "",
+                name: "/floweredux",
+                text: "流程设计redux"
             }
 
         ]

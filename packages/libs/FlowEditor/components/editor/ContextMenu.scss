@@ -1,0 +1,90 @@
+.contextMenuWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  z-index: 999;
+  background-color: #fff;
+  ul.contextMenu {
+    min-width: 100px;
+    list-style: none;
+
+    border: 1px solid rgba(0, 0, 0, 0.14);
+    background: #ffffff;
+    border-radius: 2px;
+    padding: 5px 0;
+
+    li {
+      display: block;
+      font-size: 12px;
+      text-decoration: none;
+      padding: 0 10px;
+      border-top: 1px solid transparent;
+      border-bottom: 1px solid transparent;
+      outline: none;
+      cursor: pointer;
+      line-height: 22px;
+      color: #333;
+      position: relative;
+      &:hover {
+        background-color: #ececec;
+      }
+      &:global(.disabled) {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+      .subFolderMenu {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transform: translate(100%, 0);
+        border: 1px solid rgba(0, 0, 0, 0.14);
+        background: #ffffff;
+        >.createNew {
+          display: block;
+          font-size: 12px;
+          padding: 0 10px;
+          cursor: pointer;
+          line-height: 22px;
+          color: #333;
+          &:hover {
+            background-color: #ececec;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/**
+ * theme-black
+ */
+:global(.theme-black) {
+    .contextMenuWrapper {
+
+      background-color: #222;
+      ul.contextMenu {
+        border: 1px solid rgba(0, 0, 0, 1);
+        background: #222;
+
+        li {
+          color: #999;
+          &:hover {
+            background-color: #333;
+          }
+          .subFolderMenu {
+            border: 1px solid rgba(0, 0, 0, 1);
+            background: #222;
+            >.createNew {
+              color: #999;
+              &:hover {
+                background-color: #333;
+              }
+            }
+          }
+        }
+      }
+    }
+}

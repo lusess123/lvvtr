@@ -1,0 +1,154 @@
+// @import "../../style/themes/default";
+// @import "../../style/mixins/index";
+ @import "./mixin";
+$ant-prefix             : ak;
+// Media queries breakpoints
+// Extra small screen / phone
+$screen-xs              : 480px;
+$screen-xs-min          : $screen-xs;
+
+// Small screen / tablet
+$screen-sm              : 576px;
+$screen-sm-min          : $screen-sm;
+
+// Medium screen / desktop
+$screen-md              : 768px;
+$screen-md-min          : $screen-md;
+
+// Large screen / wide desktop
+$screen-lg              : 992px;
+$screen-lg-min          : $screen-lg;
+
+// Extra large screen / full hd
+$screen-xl              : 1200px;
+$screen-xl-min          : $screen-xl;
+
+// Extra extra large screen / large descktop
+$screen-xxl              : 1600px;
+$screen-xxl-min          : $screen-xxl;
+
+// provide a maximum
+$creen-xs-max          : ($screen-sm-min - 1px);
+$screen-sm-max          : ($screen-md-min - 1px);
+$screen-md-max          : ($screen-lg-min - 1px);
+$screen-lg-max          : ($screen-xl-min - 1px);
+$screen-xl-max          : ($screen-xxl-min - 1px);
+
+// Grid system
+$grid-columns           : 24;
+$grid-gutter-width      : 0;
+
+
+// Grid system
+.#{$ant-prefix}-row {
+  @include make-row();
+  display: block;
+  box-sizing: border-box;
+}
+
+.#{$ant-prefix}-row-flex {
+  display: flex;
+  flex-flow: row wrap;
+
+  &:before,
+  &:after {
+    display: flex;
+  }
+}
+
+// x轴原点
+.#{$ant-prefix}-row-flex-start {
+  justify-content: flex-start;
+}
+
+// x轴居中
+.#{$ant-prefix}-row-flex-center {
+  justify-content: center;
+}
+
+// x轴反方向
+.#{$ant-prefix}-row-flex-end {
+  justify-content: flex-end;
+}
+
+// x轴平分
+.#{$ant-prefix}-row-flex-space-between {
+  justify-content: space-between;
+}
+
+// x轴有间隔地平分
+.#{$ant-prefix}-row-flex-space-around {
+  justify-content: space-around;
+}
+
+// 顶部对齐
+.#{$ant-prefix}-row-flex-top {
+  align-items: flex-start;
+}
+
+// 居中对齐
+.#{$ant-prefix}-row-flex-middle {
+  align-items: center;
+}
+
+// 底部对齐
+.#{$ant-prefix}-row-flex-bottom {
+  align-items: flex-end;
+}
+
+.#{$ant-prefix}-col {
+  position: relative;
+  display: block;
+}
+
+@include make-grid-columns();
+@include make-grid();
+
+// Extra small grid
+//
+// Columns, offsets, pushes, and pulls for extra small devices like
+// smartphones.
+
+@include make-grid(-xs);
+
+// Small grid
+//
+// Columns, offsets, pushes, and pulls for the small device range, from phones
+// to tablets.
+
+@media (min-width: $screen-sm-min) {
+  @include make-grid(-sm);
+}
+
+// Medium grid
+//
+// Columns, offsets, pushes, and pulls for the desktop device range.
+
+@media (min-width: $screen-md-min) {
+  @include make-grid(-md);
+}
+
+// Large grid
+//
+// Columns, offsets, pushes, and pulls for the large desktop device range.
+
+@media (min-width: $screen-lg-min) {
+  @include make-grid(-lg);
+}
+
+// Extra Large grid
+//
+// Columns, offsets, pushes, and pulls for the full hd device range.
+
+@media (min-width: $screen-xl-min) {
+  @include make-grid(-xl);
+}
+
+// Extra Extra Large grid
+//
+// Columns, offsets, pushes, and pulls for the full hd device range.
+
+@media (min-width: $screen-xxl-min) {
+  @include make-grid(-xxl);
+}
+

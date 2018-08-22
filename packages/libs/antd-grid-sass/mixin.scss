@@ -1,0 +1,118 @@
+//$import "../../style/mixins/index";
+@import "./mixins/clearfix";
+// Grid system
+$grid-columns: 24;
+$grid-gutter-width: 0;
+// mixins for grid system
+// ------------------------
+@mixin make-row($gutter: $grid-gutter-width) {
+  position: relative;
+  margin-left: ($gutter / -2);
+  margin-right: ($gutter / -2);
+  height: auto;
+  @include clearfix();
+}
+@mixin col0($index, $list) {
+  @if($list) {
+    @if $index <=$grid-columns {
+      $item: ".#{$ant-prefix}-col-#{$index}, .#{$ant-prefix}-col-xs-#{$index}, .#{$ant-prefix}-col-sm-#{$index}, .#{$ant-prefix}-col-md-#{$index}, .#{$ant-prefix}-col-lg-#{$index}";
+      @include col0(($index + 1), "#{$list}, #{$item}");
+    }
+    @else {
+      #{$list} {
+        position: relative; // Prevent columns from collapsing when empty
+        min-height: 1px;
+        padding-left: ($grid-gutter-width / 2);
+        padding-right: ($grid-gutter-width / 2);
+      }
+    }
+  }
+  @else {
+    $item: ".#{$ant-prefix}-col-#{$index}, .#{$ant-prefix}-col-xs-#{$index}, .#{$ant-prefix}-col-sm-#{$index}, .#{$ant-prefix}-col-md-#{$index}, .#{$ant-prefix}-col-lg-#{$index}";
+    @include col0(($index + 1), $item);
+  }
+}
+
+@mixin make-grid-columns() {
+
+  @include col0(1,null);
+}
+
+@mixin col1($index, $list,$class) {
+  @if ($list) {
+    // general
+    @if $index <=$grid-columns {
+      $item:".#{$ant-prefix}-col#{$class}-#{$index}";
+      @include col1(($index + 1), "#{$list}, #{$item}",$class);
+    }
+    @else {
+      #{$list} {
+        float: left;
+        flex: 0 0 auto;
+      }
+    }
+  }
+  @else {
+    $item:".#{$ant-prefix}-col#{$class}-#{$index}";
+    @include col1(($index + 1), $item,$class);
+  }
+}
+
+@mixin float-grid-columns($class) {
+ 
+  @include col1(1,null,$class); // kickstart it
+}
+
+// lesshint false
+@mixin loop-grid-columns($index, $class) {
+  @if $index>0 {
+    .#{$ant-prefix}-col#{$class}-#{$index} {
+      display: block;
+      box-sizing: border-box;
+      width: percentage(($index / $grid-columns));
+    }
+    .#{$ant-prefix}-col#{$class}-push-#{$index} {
+      left: percentage(($index / $grid-columns));
+    }
+    .#{$ant-prefix}-col#{$class}-pull-#{$index} {
+      right: percentage(($index / $grid-columns));
+    }
+    .#{$ant-prefix}-col#{$class}-offset-#{$index} {
+      margin-left: percentage(($index / $grid-columns));
+    }
+    .#{$ant-prefix}-col#{$class}-order-#{$index} {
+      order: $index;
+    }
+    @include loop-grid-columns(($index - 1), $class);
+  }
+  @else {
+    @if $index=0 {
+      .#{$ant-prefix}-col#{$class}-#{$index} {
+        display: none;
+      }
+      .#{$ant-prefix}-col-push-#{$index} {
+        left: auto;
+      }
+      .#{$ant-prefix}-col-pull-#{$index} {
+        right: auto;
+      }
+      .#{$ant-prefix}-col#{$class}-push-#{$index} {
+        left: auto;
+      }
+      .#{$ant-prefix}-col#{$class}-pull-#{$index} {
+        right: auto;
+      }
+      .#{$ant-prefix}-col#{$class}-offset-#{$index} {
+        margin-left: 0;
+      }
+      .#{$ant-prefix}-col#{$class}-order-#{$index} {
+        order: 0;
+      }
+    }
+  }
+}
+
+@mixin make-grid($class: '') {
+  @include float-grid-columns($class);
+  @include loop-grid-columns($grid-columns, $class);
+}

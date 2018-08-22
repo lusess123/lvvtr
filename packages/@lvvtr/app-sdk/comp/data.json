@@ -1,0 +1,206 @@
+{
+    "id": "727a68be-e770-450f-a98e-920ee00e7e20",
+    "zoom": 100,
+    "links": [
+        {
+        "id": "6f432f6b-9714-417b-924c-c91765ca6f7b",
+        "type": "default",
+        "extras": {},
+        "points": [{
+            "x": 469,
+            "y": 538.5,
+            "id": "1a1b4ebc-f6d7-4ee8-aae4-abcbc7489cc4",
+            "type": "default",
+            "selected": false,
+            "selectedAble": true
+        }, {
+            "x": 713,
+            "y": 324.5,
+            "id": "580eee0e-bd0e-48c3-ae8c-dd3a30609917",
+            "type": "default",
+            "selected": false,
+            "selectedAble": true
+        }],
+        "source": "bdd79b29-99d2-41e8-843a-5db114ecc1b3",
+        "target": "81881bb0-6615-4552-8b9d-d8d65dad7f28",
+        "selected": false,
+        "sourcePort": "7adb9338-430f-4520-9dfa-0833725d0ed4",
+        "targetPort": "3e56a96b-33c8-4c43-9960-edf94efb91ba",
+        "selectedAble": true
+    }, 
+    {
+        "id": "b52099ef-3086-4d93-b9a5-b186bfbc8c43",
+        "type": "default",
+        "extras": {},
+        "points": [{
+            "x": 469,
+            "y": 538.5,
+            "id": "724f329a-59aa-41bf-ae23-0c1bb2795388",
+            "type": "default",
+            "selected": false,
+            "selectedAble": true
+        }, {
+            "x": 692,
+            "y": 699.5,
+            "id": "07972a61-49bc-49dc-a7db-2c7658847340",
+            "type": "default",
+            "selected": false,
+            "selectedAble": true
+        }],
+        "source": "bdd79b29-99d2-41e8-843a-5db114ecc1b3",
+        "target": "d905716f-09d8-48bb-a01c-cab3a741ad2e",
+        "selected": false,
+        "sourcePort": "7adb9338-430f-4520-9dfa-0833725d0ed4",
+        "targetPort": "bad3290c-83e9-4348-bd31-2f890ea45ea5",
+        "selectedAble": true
+    }],
+    "nodes": [{
+        "x": 405,
+        "y": 504,
+        "id": "bdd79b29-99d2-41e8-843a-5db114ecc1b3",
+        "icon": "swicon-lnterset",
+        "type": "dataset",
+        "color": "#3A84AA",
+        "ports": [{
+            "id": "7adb9338-430f-4520-9dfa-0833725d0ed4",
+            "in": false,
+            "idx": 0,
+            "type": "default",
+            "label": "输出",
+            "links": ["6f432f6b-9714-417b-924c-c91765ca6f7b", "b52099ef-3086-4d93-b9a5-b186bfbc8c43"],
+            "selected": false,
+            "parentNode": "bdd79b29-99d2-41e8-843a-5db114ecc1b3",
+            "selectedAble": true
+        }],
+        "title": "2018年8月交易记录",
+        "extras": {},
+        "bkClass": "com.sophon.workflow.executor.job.GraphExtractor",
+        "subtype": "",
+        "argument": {
+            "args": []
+        },
+        "selected": false,
+        "widgetId": "dataset",
+        "description": "adult income dataset11111",
+        "selectedAble": true
+    }, {
+        "x": 709,
+        "y": 290,
+        "id": "81881bb0-6615-4552-8b9d-d8d65dad7f28",
+        "icon": "",
+        "type": "algo",
+        "color": "#3A84AA",
+        "ports": [{
+            "id": "3e56a96b-33c8-4c43-9960-edf94efb91ba",
+            "in": true,
+            "idx": 0,
+            "type": "default",
+            "label": "输入",
+            "links": ["6f432f6b-9714-417b-924c-c91765ca6f7b"],
+            "selected": false,
+            "parentNode": "81881bb0-6615-4552-8b9d-d8d65dad7f28",
+            "selectedAble": true
+        }, {
+            "id": "a09c19c4-660a-4167-ae42-9258dfc290f5",
+            "in": false,
+            "idx": 0,
+            "type": "default",
+            "label": "输出",
+            "links": [],
+            "selected": false,
+            "parentNode": "81881bb0-6615-4552-8b9d-d8d65dad7f28",
+            "selectedAble": true
+        }, {
+            "id": "6ce184ed-b853-4251-be23-af3e22a64f3b",
+            "in": false,
+            "idx": 1,
+            "type": "default",
+            "label": "输出",
+            "links": [],
+            "selected": false,
+            "parentNode": "81881bb0-6615-4552-8b9d-d8d65dad7f28",
+            "selectedAble": true
+        }],
+        "title": "train_lr",
+        "extras": {},
+        "bkClass": "com.sophon.workflow.executor.job.GraphExtractor",
+        "subtype": "",
+        "argument": {
+            "args": [{
+                "key": "key1",
+                "value": ""
+            }, {
+                "key": "key2",
+                "value": ""
+            }, {
+                "key": "key3",
+                "value": ""
+            }]
+        },
+        "selected": false,
+        "widgetId": "algo",
+        "description": "train a logistic regression model",
+        "selectedAble": true
+    }, {
+        "x": 688,
+        "y": 665,
+        "id": "d905716f-09d8-48bb-a01c-cab3a741ad2e",
+        "icon": "",
+        "type": "algo",
+        "color": "#3A84AA",
+        "ports": [{
+            "id": "bad3290c-83e9-4348-bd31-2f890ea45ea5",
+            "in": true,
+            "idx": 0,
+            "type": "default",
+            "label": "输入",
+            "links": ["b52099ef-3086-4d93-b9a5-b186bfbc8c43"],
+            "selected": false,
+            "parentNode": "d905716f-09d8-48bb-a01c-cab3a741ad2e",
+            "selectedAble": true
+        }, {
+            "id": "28d08e00-10d0-435a-ad01-8cd1657581e6",
+            "in": false,
+            "idx": 0,
+            "type": "default",
+            "label": "输出",
+            "links": [],
+            "selected": false,
+            "parentNode": "d905716f-09d8-48bb-a01c-cab3a741ad2e",
+            "selectedAble": true
+        }, {
+            "id": "55bbc47d-c7e3-4625-82e5-c618f07f26b2",
+            "in": false,
+            "idx": 1,
+            "type": "default",
+            "label": "输出",
+            "links": [],
+            "selected": false,
+            "parentNode": "d905716f-09d8-48bb-a01c-cab3a741ad2e",
+            "selectedAble": true
+        }],
+        "title": "split_data",
+        "extras": {},
+        "bkClass": "com.sophon.workflow.executor.job.GraphExtractor",
+        "subtype": "",
+        "argument": {
+            "args": [{
+                "key": "key1",
+                "value": ""
+            }, {
+                "key": "key2",
+                "value": ""
+            }, {
+                "key": "key3",
+                "value": ""
+            }]
+        },
+        "selected": true,
+        "widgetId": "algo",
+        "description": "split data into two parts, commonly one for training, another for validation",
+        "selectedAble": true
+    }],
+    "offsetX": 0,
+    "offsetY": 0,
+    "gridSize": 0
+}

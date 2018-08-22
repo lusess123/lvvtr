@@ -1,5 +1,5 @@
 import {IApp} from "./iapp"
-import * as ioc from "./../ioc"
+import * as ioc from "../ioc"
 
 let _apps : IApp[];
 

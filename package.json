@@ -10,7 +10,10 @@
     "lerna-clean": "lerna clean"
   },
   "workspaces": [
-    "packages/hosts/*", "packages/@lvvtr/*","packages/libs/**", "packages/apps/**"
+    "packages/hosts/*",
+    "packages/@lvvtr/*",
+    "packages/libs/**",
+    "packages/apps/**"
   ],
   "repository": {
     "type": "git",
@@ -24,5 +27,8 @@
   "homepage": "https://github.com/lusess123/lvvtr#readme",
   "devDependencies": {
     "lerna": "^2.11.0"
+  },
+  "dependencies": {
+    "react-custom-scrollbars": "^4.2.1"
   }
 }

@@ -1,4 +1,4 @@
-import { IRoot } from "./../comp/jsonitem";
+import { IRoot } from "../comp/jsonitem";
 const schema: IRoot = {
     title: "终端策略",
     type: "object",

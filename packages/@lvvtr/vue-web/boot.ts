@@ -6,7 +6,7 @@ import {router} from './router';
 import App from './app.vue';
 import Vuex from 'vuex';
 import rxjs from 'rxjs';
-import apps from '@lvvtr/sys/web/appget';
+import apps from '../sys/web/appget';
 import storeconfig from './store'
 
 Vue.use(Vuex);

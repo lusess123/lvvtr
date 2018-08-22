@@ -1,0 +1,19 @@
+{
+  "name": "antd-grid-sass",
+  "version": "1.0.0",
+  "description": "antd的栅格样式是less版本的，我把他改为sass版本",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lusess123/antd-grid-sass.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lusess123/antd-grid-sass/issues"
+  },
+  "homepage": "https://github.com/lusess123/antd-grid-sass#readme"
+}
