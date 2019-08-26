@@ -1,13 +1,13 @@
 
-import {BaseApp} from "@lvvtr/sys/web/baseapp";
-import {IMenu} from "@lvvtr/sys/web/imenu";
+import {BaseApp} from "../sys/web/baseapp";
+import {IMenu} from "../sys/web/imenu";
 
 import iView from 'iview';
 import Vue from 'vue';
 import 'iview/dist/styles/iview.css';
 Vue.use(iView);
 
-import * as ioc from "@lvvtr/sys/ioc"
+import * as ioc from "../sys/ioc"
 
 import policy from './view/devpolicy.vue'
 import apppolicy from './view/apppolicy.vue'

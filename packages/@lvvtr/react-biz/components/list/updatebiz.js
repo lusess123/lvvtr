@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import PComponent from './../../components/common/pcomponent'
+import PComponent from '../common/pcomponent'
 import PForm from './../../components/form'
 
 export default class UpdateBiz extends PComponent {

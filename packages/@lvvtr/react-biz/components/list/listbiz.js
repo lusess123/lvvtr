@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import PComponent from './../../components/common/pcomponent'
+import PComponent from '../common/pcomponent'
 import PForm from './../../components/form'
 
-import RcTable from './../../components/list/rctable'
+import RcTable from './rctable'
 import Pagination from 'rc-pagination'
 import './../common/styles/pagination.css'
 import {Vif} from './../../components/common/util'

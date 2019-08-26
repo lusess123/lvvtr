@@ -1,7 +1,7 @@
 import Main from './../view/main.vue';
 import hull from './../view/hull.vue';
 
-import getapps from "@lvvtr/sys/web/appget";
+import getapps from "../../sys/web/appget";
 
 const _getMainRoute = () => {
   

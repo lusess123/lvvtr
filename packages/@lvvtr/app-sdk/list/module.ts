@@ -1,6 +1,6 @@
 
-import {pageview,column,btnGroup,dict,btn,controlType} from "@lvvtr/biz/list/data";
-import {getTableData, getBtnGroup,getNoGroupBtns,getBtnsByGroupName} from "@lvvtr/biz/list/bf";
+import {pageview,column,btnGroup,dict,btn,controlType} from "../../biz/list/data";
+import {getTableData, getBtnGroup,getNoGroupBtns,getBtnsByGroupName} from "../../biz/list/bf";
 export default (Title:string,FormName:string)=>
                (searchColumns:column[],listColumns:column[])=>
                (btnGroups:dict<btnGroup>,btns:dict<btn>)=>

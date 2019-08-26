@@ -1,4 +1,4 @@
-import { IRoot } from "./../comp/jsonitem";
+import { IRoot } from "../comp/jsonitem";
 const _app :IRoot = {
     title :" 应用策略",
     type :"object",

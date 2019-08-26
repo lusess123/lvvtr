@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import PComponent from './../../components/common/pcomponent'
-import RcTable from './../../components/list/rctable'
+import PComponent from '../common/pcomponent'
+import RcTable from './rctable'
 import styles from './style.scss'
-import Table from './../table'
+import Table from '../table'
 import {callApi} from './../../middlewares/api'
 import get from 'lodash/get';
 

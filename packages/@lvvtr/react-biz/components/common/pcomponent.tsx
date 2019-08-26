@@ -77,7 +77,7 @@ export default class PComponent extends Component {
     }
 
     pRender() {
-
+         return <noscript/>;
     }
     render() {
         return this.pRender();

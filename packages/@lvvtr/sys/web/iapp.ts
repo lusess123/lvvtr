@@ -1,5 +1,5 @@
 import { IMenu } from "./imenu"
-import * as ioc from "./../ioc"
+import * as ioc from "../ioc"
 import { IRouteConfig} from "./route"
 
 

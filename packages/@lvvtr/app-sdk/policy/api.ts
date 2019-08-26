@@ -1,4 +1,4 @@
-import { IRoot } from "./../comp/jsonitem";
+import { IRoot } from "../comp/jsonitem";
 const _api :IRoot = {
     title :"接口",
     type:"object",

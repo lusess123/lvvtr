@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import PComponent from './../../components/common/pcomponent'
-import Table from './../table'
+import PComponent from '../common/pcomponent'
+import Table from '../table'
 import get from 'lodash/get';
 import Checkbox from './../../components/checkbox'
-import Search from './../table/search';
+import Search from '../table/search';
 
 
 export default class RcTable extends PComponent {

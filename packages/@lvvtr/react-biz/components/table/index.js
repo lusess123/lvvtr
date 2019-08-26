@@ -5,7 +5,7 @@ import {bindActionCreators} from 'redux';
 import styles from './table.scss';
 import SingleTr from "./singleTr";
 
-class Table extends Component {
+ export default class Table extends Component {
     constructor(props) {
         super(props);
     }
@@ -44,4 +44,4 @@ class Table extends Component {
         )
     }
 }
-module.exports = Table;
+

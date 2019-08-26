@@ -2,7 +2,9 @@
  
     "lerna": "2.11.0",
     "npmClient": "yarn",
-   
+    "workspaces": [
+    "packages/hosts/*", "packages/@lvvtr/*","packages/libs/**", "packages/apps/**"
+  ],
     "useWorkspaces": true,
     "version": "1.0.0"
   }

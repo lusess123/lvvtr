@@ -10,5 +10,10 @@
   "license": "ISC",
   "devDependencies": {
     "lib1": "*"
+  },
+  "dependencies": {
+    "@types/jquery": "^3.3.6",
+    "@types/lodash": "^4.14.116",
+    "jquery": "^3.3.1"
   }
 }
