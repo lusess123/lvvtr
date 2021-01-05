@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "antd-grid-sass": "*",
-    "axios": "^0.17.1",
+    "axios": "^0.21.1",
     "font-awesome": "^4.7.0",
     "immutability-helper": "^2.7.1",
     "immutable": "^3.8.2",
